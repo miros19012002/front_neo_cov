@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Прогноз заболеваемости​">
+    <meta name="description" content="">
+    <title>Статистика</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Статистика.css" media="screen">
+    <!-- <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.6.9, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      // google.charts.setOnLoadCallback(drawChart);
+      function drawChart(responseData) {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'День');
+        data.addColumn('number', 'Предсказанная заболеваемость');
+        data.addColumn('number', 'Существующая заболеваемость');
+        data.addRows(responseData);
+
+        var options = {
+          title: 'Результат обучения нейронной сети по прогнозу заболеваемости',
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          lineWidth: 3,
+          width:1200,
+          height:685
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/image-jkLtF5p0j-transformed.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Статистика">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="ru"><header class="u-clearfix u-gradient u-header u-header" id="sec-73ac"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Главная.html" class="u-image u-logo u-image-1" data-image-width="404" data-image-height="91">
+          <img src="images/image-jkLtF5p0j-transformed.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+            <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-nav-container">
+            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-white u-border-hover-white u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="Главная.html" style="padding: 10px 20px;">Главная</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-white u-border-hover-white u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="Контакты.html" style="padding: 10px 20px;">Контакты</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-white u-border-hover-white u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="О-вирусе.html" style="padding: 10px 20px;">О вирусе</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-white u-border-hover-white u-button-style u-nav-link u-text-active-white u-text-hover-white u-text-white" href="Статистика.html" style="padding: 10px 20px;">Статистика</a>
+</li></ul>
+          </div>
+          <div class="u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Главная.html">Главная</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Контакты.html">Контакты</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="О-вирусе.html">О вирусе</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Статистика.html">Статистика</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-ef21">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout" style="">
+            <div class="u-layout-row" style="">
+              <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
+                <div class="u-container-layout u-valign-middle u-container-layout-1" src="">
+                  <img class="u-image u-image-contain u-image-default u-image-1" src="images/about.png" alt="" data-image-width="682" data-image-height="637">
+                </div>
+              </div>
+              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-shape-rectangle u-size-30 u-size-xs-60 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <h2 class="u-text u-text-default u-text-1">&nbsp;Прогноз заболеваемости<span style="font-weight: 700;"></span>
+                  </h2>
+                  <p class="u-text u-text-2"> С помощью данной нейронной сети с помощью выбранных параметров Вы можете увидеть предсказание развития вируса в течение следующей недели.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="u-align-center u-clearfix u-palette-1-light-1 u-section-3" id="sec-1611">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+
+        <div class="u-form u-form-1">
+          <h4>Выберите параметры для обучения </h4>
+          <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px" source="email">
+            
+            <div class="u-form-group u-form-name u-label-top">
+              <label for="name-558c" class="u-label">Страна</label>
+              <input type="text" list="countryName" placeholder="Страна" id="name-558c" name="Страна" class="u-input u-input-rectangle" required="">
+              <datalist id="countryName">
+                <option value="Republic of Ireland">
+                  <option value="Mauritius">
+                  <option value="Sierra Leone">
+                  <option value="Georgia">
+                  <option value="Qatar">
+                  <option value="Jordan">
+                  <option value="Micronesia">
+                  <option value="Thailand">
+                  <option value="Indonesia">
+                  <option value="Sint Eustatius and Saba">
+                  <option value="Antigua and Barbuda">
+                  <option value="Saint Kitts and Nevis">
+                  <option value="MS Zaandam">
+                  <option value="Kuwait">
+                  <option value="CO">
+                  <option value="Saint Martin">
+                  <option value="Palestine">
+                  <option value="Taiwan*">
+                  <option value="Winter Olympics 2022">
+                  <option value="Cambodia">
+                  <option value="CA (From Diamond Princess)">
+                  <option value="Cayman Islands">
+                  <option value="Uruguay">
+                  <option value="IL">
+                  <option value="Austria">
+                  <option value="Peru">
+                  <option value="Bolivia">
+                  <option value="Cruise Ship">
+                  <option value="United Arab Emirates">
+                  <option value="TX (From Diamond Princess)">
+                  <option value="Alberta">
+                  <option value="Congo (Kinshasa)">
+                  <option value="Kazakhstan">
+                  <option value="Gabon">
+                  <option value="Ghana">
+                  <option value="TX">
+                  <option value="Nigeria">
+                  <option value="Paraguay">
+                  <option value="Mongolia">
+                  <option value="Solomon Islands">
+                  <option value="MA">
+                  <option value="Denmark">
+                  <option value="LA">
+                  <option value="Bulgaria">
+                  <option value="Mainland China">
+                  <option value="Oman">
+                  <option value="NC">
+                  <option value="Zimbabwe">
+                  <option value="Vanuatu">
+                  <option value="Poland">
+                  <option value="Gibraltar">
+                  <option value="Serbia">
+                  <option value="Maldives">
+                  <option value="Hong Kong SAR">
+                  <option value="Ethiopia">
+                  <option value="Saint Lucia">
+                  <option value="Republic of the Congo">
+                  <option value="Hong Kong">
+                  <option value="QC">
+                  <option value="Romania">
+                  <option value="Cuba">
+                  <option value="Haiti">
+                  <option value="Colombia">
+                  <option value="Botswana">
+                  <option value="Lesotho">
+                  <option value="Togo">
+                  <option value="Canada">
+                  <option value="Spain">
+                  <option value="NE">
+                  <option value="Honduras">
+                  <option value="Kenya">
+                  <option value="Congo (Brazzaville)">
+                  <option value="Kyrgyzstan">
+                  <option value="Bahamas">
+                  <option value="Palau">
+                  <option value="NJ">
+                  <option value="Costa Rica">
+                  <option value="HI">
+                  <option value="Suriname">
+                  <option value="West Bank and Gaza">
+                  <option value="Greece">
+                  <option value="Luxembourg">
+                  <option value="Slovenia">
+                  <option value="Angola">
+                  <option value="Ascension and Tristan da Cunha">
+                  <option value="North Ireland">
+                  <option value="Ireland">
+                  <option value="Channel Islands">
+                  <option value="AZ">
+                  <option value="MO">
+                  <option value="Algeria">
+                  <option value="Central African Republic">
+                  <option value="Guatemala">
+                  <option value="Papua New Guinea">
+                  <option value="Ivory Coast">
+                  <option value="Belarus">
+                  <option value="Hungary">
+                  <option value="Bosnia and Herzegovina">
+                  <option value="Tanzania">
+                  <option value="Vietnam">
+                  <option value="Dominican Republic">
+                  <option value="Slovakia">
+                  <option value="occupied Palestinian territory">
+                  <option value="Czechia">
+                  <option value="U.S.">
+                  <option value="Fiji">
+                  <option value="Cape Verde">
+                  <option value="Switzerland">
+                  <option value="TN">
+                  <option value="Vatican City">
+                  <option value="Mali">
+                  <option value="Malawi">
+                  <option value="Republic of Korea">
+                  <option value="Macao SAR">
+                  <option value="Sudan">
+                  <option value="WA">
+                  <option value="San Marino">
+                  <option value="Saint Vincent and the Grenadines">
+                  <option value="Bhutan">
+                  <option value="Jamaica">
+                  <option value="China">
+                  <option value="US">
+                  <option value="WI">
+                  <option value="St. Martin">
+                  <option value="Holy See">
+                  <option value="The Gambia">
+                  <option value="Eritrea">
+                  <option value="Syria">
+                  <option value="Singapore">
+                  <option value="Monaco">
+                  <option value="Liechtenstein">
+                  <option value="Eswatini">
+                  <option value="Mayotte">
+                  <option value="Montenegro">
+                  <option value="Nepal">
+                  <option value="North Macedonia">
+                  <option value="Martinique">
+                  <option value="Panama">
+                  <option value="OK">
+                  <option value="Curacao">
+                  <option value="Djibouti">
+                  <option value="Cabo Verde">
+                  <option value="Kiribati">
+                  <option value="Lebanon">
+                  <option value="GA">
+                  <option value="Albania">
+                  <option value="Burkina Faso">
+                  <option value="Madagascar">
+                  <option value="Belgium">
+                  <option value="Norway">
+                  <option value="PA">
+                  <option value="South Africa">
+                  <option value="MN">
+                  <option value="Laos">
+                  <option value="Iran">
+                  <option value="Israel">
+                  <option value="Lithuania">
+                  <option value="Portugal">
+                  <option value="Guinea-Bissau">
+                  <option value="Tajikistan">
+                  <option value="Niger">
+                  <option value="Summer Olympics 2020">
+                  <option value="Netherlands">
+                  <option value="Guyana">
+                  <option value="Taiwan">
+                  <option value="Somalia">
+                  <option value="Greenland">
+                  <option value="Belize">
+                  <option value="Argentina">
+                  <option value="Brunei">
+                  <option value="Russian Federation">
+                  <option value="Jersey">
+                  <option value="Sao Tome and Principe">
+                  <option value="United Kingdom">
+                  <option value="Bahrain">
+                  <option value="Cote d'Ivoire">
+                  <option value="Saudi Arabia">
+                  <option value="France">
+                  <option value="India">
+                  <option value="CA">
+                  <option value="RI">
+                  <option value="Tunisia">
+                  <option value="Puerto Rico">
+                  <option value="Samoa">
+                  <option value="Grenada">
+                  <option value="Japan">
+                  <option value="Mexico">
+                  <option value="Afghanistan">
+                  <option value="Moldova">
+                  <option value="The Bahamas">
+                  <option value="Marshall Islands">
+                  <option value="Tuvalu">
+                  <option value="Australia">
+                  <option value="Latvia">
+                  <option value="Zambia">
+                  <option value="South Sudan">
+                  <option value="Italy">
+                  <option value="Others">
+                  <option value="Kosovo">
+                  <option value="Germany">
+                  <option value="Korea">
+                  <option value="French Guiana">
+                  <option value="Reunion">
+                  <option value="Libya">
+                  <option value="NV">
+                  <option value="SC">
+                  <option value="Turkey">
+                  <option value="Mozambique">
+                  <option value="MD">
+                  <option value="Iran (Islamic Republic of)">
+                  <option value="Russia">
+                  <option value="Croatia">
+                  <option value="Andorra">
+                  <option value="Burundi">
+                  <option value="Sri Lanka">
+                  <option value="Estonia">
+                  <option value="NY">
+                  <option value="FL">
+                  <option value="NH">
+                  <option value="VT">
+                  <option value="Republic of Moldova">
+                  <option value="Aruba">
+                  <option value="New Zealand">
+                  <option value="ON">
+                  <option value="Czech Republic">
+                  <option value="Barbados">
+                  <option value="Uganda">
+                  <option value="D.C.">
+                  <option value="Guadeloupe">
+                  <option value="Rwanda">
+                  <option value="Antarctica">
+                  <option value="Ukraine">
+                  <option value="NE (From Diamond Princess)">
+                  <option value="Equatorial Guinea">
+                  <option value="Dominica">
+                  <option value="Cameroon">
+                  <option value="Viet Nam">
+                  <option value="Trinidad and Tobago">
+                  <option value="Nauru">
+                  <option value="South Korea">
+                  <option value="Diamond Princess">
+                  <option value="CT">
+                  <option value="Taipei and environs">
+                  <option value="Benin">
+                  <option value="Sweden">
+                  <option value="VA">
+                  <option value="Uzbekistan">
+                  <option value="Chad">
+                  <option value="Timor-Leste">
+                  <option value="Malta">
+                  <option value="Guinea">
+                  <option value="Guam">
+                  <option value="Pakistan">
+                  <option value="Burma">
+                  <option value="Ecuador">
+                  <option value="Venezuela">
+                  <option value="Macau">
+                  <option value="Iraq">
+                  <option value="Iceland">
+                  <option value="Saint Barthelemy">
+                  <option value="Comoros">
+                  <option value="Malaysia">
+                  <option value="Egypt">
+                  <option value="Senegal">
+                  <option value="Brazil">
+                  <option value="Chile">
+                  <option value="Nicaragua">
+                  <option value="Bangladesh">
+                  <option value="Guernsey">
+                  <option value="Mauritania">
+                  <option value="Yemen">
+                  <option value="Philippines">
+                  <option value="Morocco">
+                  <option value="UT">
+                  <option value="KS">
+                  <option value="IA">
+                  <option value="Seychelles">
+                  <option value="Liberia">
+                  <option value="Azerbaijan">
+                  <option value="Armenia">
+                  <option value="KY">
+                  <option value="El Salvador">
+                  <option value="Gambia">
+                  <option value="Tonga">
+                  <option value="Faroe Islands">
+                  <option value="Cyprus">
+                  <option value="Namibia">
+                  <option value="East Timor">
+                  <option value="Finland">
+                  <option value="OR">
+                  <option value="IN">
+              </datalist>
+            </div>
+            <div class="u-form-email u-form-group u-label-top">
+              <label for="email-558c" class="u-label">Регион</label>
+              <input type="text" list="regionName" placeholder="Регион" id="email-558c" name="Регион" class="u-input u-input-rectangle" required="">
+              <datalist id="regionName">
+
+              </datalist>
+            </div>
+            <div class="u-form-group u-form-submit u-label-top">
+              <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-18 u-btn-1" id="start">Начать</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+            <div class="u-form-send-message u-form-send-success">Спасибо! Ожидайте результат обучения!</div>
+            <div class="u-form-send-error u-form-send-message">Данные введены некоректно! Попробуйте еще раз!</div>
+            <input type="hidden" value="" name="recaptchaResponse">
+            <input type="hidden" name="formServices" value="f32c975c05c5a04a312e1f46d8d41019">
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-e856">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+      </div>
+    </section>
+
+    <section class="u-align-center u-clearfix u-section-2" id="sec-4d0a">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+          <h1 id="loadingText">Данные о заболевших по странам загружаются ...</h1>
+          <h1 id="loadingText1">Данные о заболевших по странам</h1>
+
+          
+          <table id="statTable" class="table_blur">
+            <colgroup>
+              <col width="25%">
+              <col width="25%">
+              <col width="25%">
+              <col width="25%">
+            </colgroup>
+
+            <thead class="u-black u-table-header u-table-header-1">
+              
+              <tr style="height: 36px;">
+                <th class="u-border-1 u-border-palette-1-light-1 u-table-cell">Страна</th>
+                <th class="u-border-1 u-border-black u-table-cell">Заболело</th>
+                <th class="u-border-1 u-border-palette-1-light-1 u-table-cell">Выздоровело</th>
+                <th class="u-border-1 u-border-palette-1-light-1 u-table-cell">Умерло</th>
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  
+
+    </section>
+
+    <section>
+      <iframe src="https://coronavirus-monitor.info/widget/" frameborder="0" style="display: block; width: 100%; height: 800px;" height="800"></iframe>
+    </section>
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a414"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Все вопросы можно задавать на почту&nbsp;<br>miroshnichenkodascha@gmail.com<span style="font-weight: 700;"></span>
+        </p>
+      </div></footer>
+      <script>
+        $('#start').on('click', function() {
+          let countryName = $("#name-558c").val();
+          let regionName = $("#email-558c").val();
+          if (countryName == "" || regionName == "") {
+            alert("Не все поля заполнены!");
+            return;
+          }
+          $.ajax({
+            contentType: 'application/json',
+            data: JSON.stringify({ "country": this.value }),
+            dataType: 'json',
+            success: function(data){
+                console.log("Result: " + data);
+                drawChart(data.prediction);
+            },
+            error: function(){
+                console.log("No data for this country!");
+            },
+            processData: false,
+            type: 'POST',
+            url: "http://localhost:8080/api/get-predict"
+          });
+        });
+        $('#name-558c').on('change', function() {
+          $.ajax({
+            contentType: 'application/json',
+            data: JSON.stringify({ "country": this.value }),
+            dataType: 'json',
+            success: function(data){
+                console.log("Result: " + data);
+                for (var k in data) {
+                  $("#regionName").append('<option value="'+ data[k] +'">')
+                }
+            },
+            error: function(){
+                console.log("No regions for this country!");
+            },
+            processData: false,
+            type: 'POST',
+            url: "http://localhost:8080/api/get-regions"
+          });
+        });
+        $(document).ready(function(){
+          $('#loadingText1').hide();
+          $('#statTable').hide();
+          $.get("http://localhost:8080/api/get-last-day-total", function(data, status){
+            let parsedData = JSON.parse(data);
+            for(var k in parsedData.total) {
+              $('#statTable > tbody:last-child').append('<tr style="height: 75px;">' +
+                '<td class="u-border-1 u-border-grey-30 u-table-cell">'+ k +'</td>' +
+                '<td class="u-border-1 u-border-grey-30 u-table-cell">'+ parsedData.total[k].Confirmed +'</td>' +
+                '<td class="u-border-1 u-border-grey-30 u-table-cell">'+ parsedData.total[k].Deaths +'</td>' +
+                '<td class="u-border-1 u-border-grey-30 u-table-cell">'+ parsedData.total[k].Recovered +'</td>' +
+             '</tr>');
+            }
+            $('#loadingText').hide();
+            $('#loadingText1').show();
+            $('#statTable').show();
+          });
+        });
+      </script>
+  
+</body></html>
