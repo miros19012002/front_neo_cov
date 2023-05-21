@@ -7,7 +7,8 @@
     <title>Главная</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="Главная.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <!-- <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.6.9, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -26,8 +27,8 @@
     <meta property="og:title" content="Главная">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="Главная.html" data-home-page-title="Главная" class="u-body u-xl-mode" data-lang="ru"><header class="u-clearfix u-gradient u-header u-header" id="sec-73ac"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="404" data-image-height="91">
+  <body class="u-body u-xl-mode" data-lang="ru"><header class="u-clearfix u-gradient u-header u-header" id="sec-73ac"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Главная.html" class="u-image u-logo u-image-1" data-image-width="404" data-image-height="91">
           <img src="images/image-jkLtF5p0j-transformed.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -89,19 +90,19 @@
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h1 class="u-align-center u-text u-text-default u-text-palette-1-dark-1 u-text-2">234 112</h1>
+                  <h1 id="confirmed" class="u-align-center u-text u-text-default u-text-palette-1-dark-1 u-text-2">⏳</h1>
                   <h3 class="u-align-center u-text u-text-default u-text-palette-1-dark-1 u-text-3">заболело</h3>
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h1 class="u-align-center u-text u-text-default u-text-palette-2-dark-1 u-text-4">234 112</h1>
+                  <h1 id="recovered" class="u-align-center u-text u-text-default u-text-palette-2-dark-1 u-text-4">⏳</h1>
                   <h3 class="u-align-center u-text u-text-default u-text-palette-2-dark-1 u-text-5">выздоровело</h3>
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
                 <div class="u-container-layout u-container-layout-3">
-                  <h1 class="u-align-center u-text u-text-default u-text-palette-4-dark-1 u-text-6">234 112</h1>
+                  <h1 id="deaths" class="u-align-center u-text u-text-default u-text-palette-4-dark-1 u-text-6">⏳</h1>
                   <h3 class="u-align-center u-text u-text-default u-text-palette-4-dark-1 u-text-7">умерло</h3>
                 </div>
               </div>
@@ -203,5 +204,15 @@
         </p>
       </div></footer>
 
-  
+  <script>
+    $(document).ready(function(){
+      $.get("http://localhost:8080/api/get-last-day-counters", function(data, status){
+        let parsedData = JSON.parse(data);
+        $("#confirmed").text(parsedData.totalConfirmed);
+        $("#recovered").text(parsedData.totalRecovered);
+        $("#deaths").text(parsedData.totalDeaths);
+        // alert("Status: " + status);
+      });
+    });
+  </script>
 </body></html>
