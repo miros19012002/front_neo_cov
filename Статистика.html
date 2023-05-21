@@ -491,13 +491,13 @@
         $('#start').on('click', function() {
           let countryName = $("#name-558c").val();
           let regionName = $("#email-558c").val();
-          if (countryName == "" || regionName == "") {
+          if (countryName == "") {
             alert("Не все поля заполнены!");
             return;
           }
           $.ajax({
             contentType: 'application/json',
-            data: JSON.stringify({ "country": this.value }),
+            data: JSON.stringify({ "country": countryName, "region": regionName}),
             dataType: 'json',
             success: function(data){
                 console.log("Result: " + data);
