@@ -427,13 +427,7 @@
         </div>
       </div>
         <div id="curve_chart" style="width: 100%; height: 100%"></div>
-        <style>
-        @media screen and (min-width: 1024px){
-        #curve_chart{
-        height:500px!important
-        }
-        }
-        </style>
+       
           </section>
 
 
@@ -506,6 +500,11 @@
             dataType: 'json',
             success: function(data){
                 console.log("Result: " + data);
+                if ($(window).width() >= 1024) {
+                  $('#curve_chart').attr("style", "width: 100%; height: 500px");
+                } else {
+                  $('#curve_chart').attr("style", "width: 100%; height: 100%");
+                }
                 drawChart(data.prediction);
             },
             error: function(){
