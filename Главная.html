@@ -206,7 +206,7 @@
 
   <script>
     $(document).ready(function(){
-      $.get("http://localhos:8080/api/get-last-day-counters", function(data, status){
+      $.get("http://localhost:8080/api/get-last-day-counters", function(data, status){
         let parsedData = JSON.parse(data);
         $("#confirmed").text(parsedData.totalConfirmed);
         $("#recovered").text(parsedData.totalRecovered);
